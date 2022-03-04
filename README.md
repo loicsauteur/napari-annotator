@@ -20,6 +20,37 @@ https://github.com/napari/cookiecutter-napari-plugin#getting-started
 and review the napari docs for plugin developers:
 https://napari.org/plugins/stable/index.html
 -->
+## Description
+This lightweight plugin helps you navigate your labels layer. It is intended to ease your manual annotation work.
+![Overview image](resources/image1.png)
+- Select a label from the list.
+- Toggle the visibility of individual label entries.
+- Move to the centroid of a label at the current zoom.
+- Change the color of individual labels.
+- Erase all drawn pixels of a given label.
+
+
+
+## Usage
+Start the plugin `Plugins > napari-annotator: Annotator`.
+
+The plugin will list available labels once a labels layer is selected and labels drawn.
+
+Color shuffling for labels will not work, since the plugin sets the color mode of the layer to `direct`.
+But you can always change the color of individual labels, using the color picker.  
+
+## Known issues
+1. Lag when drawing.
+2. Erasing a label is not un-doable.
+3. Locating / moving to the center of a label only works on 2D/3D label layers, i.e.:
+   1. single- / multi-channel 2D label layers.
+   2. single-channel 3D label layers (the third dimension being either Z or T).
+4. Maximum 1024 labels supported.
+
+### Note to self:
+I am using a private object/methods for accessing napari icons (i.e. `_icons.get_icon_path('picker')`).
+This is not amethod directly directly from the viewer or layer, but is it still OK?
+
 
 ## Installation
 
@@ -42,11 +73,14 @@ the coverage at least stays the same before you submit a pull request.
 ## License
 
 Distributed under the terms of the [BSD-3] license,
-"napari-annotator" is free and open source software
+"napari-annotator" is free and open source software.
 
 ## Issues
 
 If you encounter any problems, please [file an issue] along with a detailed description.
+Or open a thread on [forum.image.sc](https://forum.image.sc) with a detailed description
+and a [@loicsauteur](https://github.com/loicsauteur) tag.
+
 
 [napari]: https://github.com/napari/napari
 [Cookiecutter]: https://github.com/audreyr/cookiecutter

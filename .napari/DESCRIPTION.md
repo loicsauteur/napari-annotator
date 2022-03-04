@@ -1,92 +1,53 @@
-
-
-<!-- This file is designed to provide you with a starting template for documenting
-the functionality of your plugin. Its content will be rendered on your plugin's
-napari hub page.
-
-The sections below are given as a guide for the flow of information only, and
-are in no way prescriptive. You should feel free to merge, remove, add and 
-rename sections at will to make this document work best for your plugin. 
-
 # Description
 
-This should be a detailed description of the context of your plugin and its 
-intended purpose.
+This light-weight plugin provides additional control over label layers.
+It is intended to ease your work when annotating data manually.
+![Example screenshot](../resources/image1.png)
+--> the image link needs to be updated... (to weblink)  <--
 
-If you have videos or screenshots of your plugin in action, you should include them
-here as well, to make them front and center for new users. 
-
-You should use absolute links to these assets, so that we can easily display them 
-on the hub. The easiest way to include a video is to use a GIF, for example hosted
-on imgur. You can then reference this GIF as an image.
-
-![Example GIF hosted on Imgur](https://i.imgur.com/A5phCX4.gif)
-
-Note that GIFs larger than 5MB won't be rendered by GitHub - we will however,
-render them on the napari hub.
-
-The other alternative, if you prefer to keep a video, is to use GitHub's video
-embedding feature.
-
-1. Push your `DESCRIPTION.md` to GitHub on your repository (this can also be done
-as part of a Pull Request)
-2. Edit `.napari/DESCRIPTION.md` **on GitHub**.
-3. Drag and drop your video into its desired location. It will be uploaded and
-hosted on GitHub for you, but will not be placed in your repository.
-4. We will take the resolved link to the video and render it on the hub.
-
-Here is an example of an mp4 video embedded this way.
-
-https://user-images.githubusercontent.com/17995243/120088305-6c093380-c132-11eb-822d-620e81eb5f0e.mp4
+It provides you with a widget listing all individual labels.
+For each label, you can:
+- select it from the list to activate it for further drawing.
+- toggle the visibility of individual labels
+- locate the drawn label (i.e. move to the centroid location at the current zoom level)
+- change the label color with a color picker
+- erase the label (sets all the drawn pixels to the label layer background value, **not un-doable**)
 
 # Intended Audience & Supported Data
 
-This section should describe the target audience for this plugin (any knowledge,
-skills and experience required), as well as a description of the types of data
-supported by this plugin.
+Everyone that has 2D or 3D data and wants to annotate (or curate annotated data) 
+should find a useful extension with this plugin.
 
-Try to make the data description as explicit as possible, so that users know the
-format your plugin expects. This applies both to reader plugins reading file formats
-and to function/dock widget plugins accepting layers and/or layer data.
-For example, if you know your plugin only works with 3D integer data in "tyx" order,
-make sure to mention this.
+The plugin will recognise and work only on label layers.
 
-If you know of researchers, groups or labs using your plugin, or if it has been cited
-anywhere, feel free to also include this information here.
+**Note:**
+The "locate center" button will only work on 2D/3D label layers, i.e.: YX, ZYX, TYX, CYX.
+
+Channels are considered a dimension.
 
 # Quickstart
 
-This section should go through step-by-step examples of how your plugin should be used.
-Where your plugin provides multiple dock widgets or functions, you should split these
-out into separate subsections for easy browsing. Include screenshots and videos
-wherever possible to elucidate your descriptions. 
+1. Start napari
+2. Open an image you want to annotate 
+   1. Best, an image with the same dimension as you labels layer should have
+   2. e.g. ``File > Open Sample > napari > Binary Blobs (3D)``
+3. Add (or load) a labels layer
+4. Start the plugin ``Plugins > napari-annotator: Annotator``
+5. Make sure the labels layer is selected
+6. Start drawing
 
-Ideally, this section should start with minimal examples for those who just want a
-quick overview of the plugin's functionality, but you should definitely link out to
-more complex and in-depth tutorials highlighting any intricacies of your plugin, and
-more detailed documentation if you have it.
-
-# Additional Install Steps (uncommon)
-We will be providing installation instructions on the hub, which will be sufficient
-for the majority of plugins. They will include instructions to pip install, and
-to install via napari itself.
-
-Most plugins can be installed out-of-the-box by just specifying the package requirements
-over in `setup.cfg`. However, if your plugin has any more complex dependencies, or 
-requires any additional preparation before (or after) installation, you should add 
-this information here.
+#### Known issues
+1. Lag when drawing (this is probably due to how napari draws the colors...)
+2. Maximum 1024 labels supported
 
 # Getting Help
 
-This section should point users to your preferred support tools, whether this be raising
-an issue on GitHub, asking a question on image.sc, or using some other method of contact.
-If you distinguish between usage support and bug/feature support, you should state that
-here.
+If you encounter bugs, please [file an issue] along with a detailed description.
+Or open a thread on [forum.image.sc](https://forum.image.sc) with a detailed description 
+and a [@loicsauteur](https://github.com/loicsauteur) tag.
+
+For general help, reach out via the [forum.image.sc](https://forum.image.sc) with a tag [@loicsauteur](https://github.com/loicsauteur).
 
 # How to Cite
 
-Many plugins may be used in the course of published (or publishable) research, as well as
-during conference talks and other public facing events. If you'd like to be cited in
-a particular format, or have a DOI you'd like used, you should provide that information here. -->
-
-The developer has not yet provided a napari-hub specific description.
+No citation needed. Honorable mention welcome.
