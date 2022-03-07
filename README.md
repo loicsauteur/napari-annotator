@@ -7,7 +7,7 @@
 [![codecov](https://codecov.io/gh/loicsauteur/napari-annotator/branch/main/graph/badge.svg)](https://codecov.io/gh/loicsauteur/napari-annotator)
 [![napari hub](https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-annotator)](https://napari-hub.org/plugins/napari-annotator)
 
-A lightweight plugin extending label layer control
+A lightweight plugin extending label layer control.
 
 ----------------------------------
 
@@ -37,7 +37,7 @@ Start the plugin `Plugins > napari-annotator: Annotator`.
 The plugin will list available labels once a labels layer is selected and labels drawn.
 
 Color shuffling for labels will not work, since the plugin sets the color mode of the layer to `direct`.
-But you can always change the color of individual labels, using the color picker.  
+But you can always change the color of individual labels, using the color picker.
 
 ## Known limitations
 1. Lag when drawing (probably related to [this issue](https://github.com/napari/napari/issues/2380#issue-825308887)).
@@ -46,6 +46,7 @@ But you can always change the color of individual labels, using the color picker
    1. single- / multi-channel 2D label layers.
    2. single-channel 3D label layers (the third dimension being either Z or T).
 4. Maximum 255 labels supported. Increasing number of supported label is possible, but when increasing it, colors in the canvas will mismatch the layer control and plugin entries (probably related to [this issue](https://github.com/napari/napari/issues/3174))
+<!--This mismatch will also prevent the hide button to work on those mismatched labels...-->
 
 ### Note to self:
 I am using a private object/methods for accessing napari icons (i.e. `_icons.get_icon_path('picker')`).
