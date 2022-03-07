@@ -55,13 +55,10 @@ This is not amethod directly directly from the viewer or layer, but is it still 
 
 ## Installation
 
-Not yet available via pip. Only from source.
-<!--
 You can install `napari-annotator` via [pip]:
 
     pip install napari-annotator
 
--->
 
 To install latest development version :
 
