@@ -2,8 +2,7 @@
 
 This light-weight plugin provides additional control over label layers.
 It is intended to ease your work when annotating data manually.
-![Example screenshot](../resources/image1.png)
---> the image link needs to be updated... (to weblink)  <--
+![Example screenshot](https://github.com/loicsauteur/napari-annotator/blob/main/resources/image1.png?raw=true)
 
 It provides you with a widget listing all individual labels.
 For each label, you can:
@@ -15,7 +14,7 @@ For each label, you can:
 
 # Intended Audience & Supported Data
 
-Everyone that has 2D or 3D data and wants to annotate (or curate annotated data) 
+Everyone that has 2D or 3D data and wants to annotate (or curate annotated data)
 should find a useful extension with this plugin.
 
 The plugin will recognise and work only on label layers.
@@ -28,7 +27,7 @@ Channels are considered a dimension.
 # Quickstart
 
 1. Start napari
-2. Open an image you want to annotate 
+2. Open an image you want to annotate
    1. Best, an image with the same dimension as you labels layer should have
    2. e.g. ``File > Open Sample > napari > Binary Blobs (3D)``
 3. Add (or load) a labels layer
@@ -43,7 +42,7 @@ Channels are considered a dimension.
 # Getting Help
 
 If you encounter bugs, please [file an issue] along with a detailed description.
-Or open a thread on [forum.image.sc](https://forum.image.sc) with a detailed description 
+Or open a thread on [forum.image.sc](https://forum.image.sc) with a detailed description
 and a [@loicsauteur](https://github.com/loicsauteur) tag.
 
 For general help, reach out via the [forum.image.sc](https://forum.image.sc) with a tag [@loicsauteur](https://github.com/loicsauteur).
