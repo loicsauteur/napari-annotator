@@ -15,6 +15,7 @@ INFO:
             - when show selected checkbox in layer controls (makes non selected labels appear brown, probably normal behaviour in direct mode)
 
 """
+# FIXME: napari plugin via npe2 does not work as previous vesion with hook implementation => colors displayed do not match with tool colors
 
 #from napari_plugin_engine import napari_hook_implementation
 from napari_annotator._annotations_list_widget import AnnoList

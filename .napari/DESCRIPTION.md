@@ -36,9 +36,9 @@ Channels are considered a dimension.
 5. Make sure the labels layer is selected
 6. Start drawing
 
-#### Known issues
-1. Lag when drawing (this is probably due to how napari draws the colors...)
-2. Maximum 1024 labels supported
+#### Known limitations
+1. Lag when drawing (see [GitHub README](https://github.com/loicsauteur/napari-annotator) for more info).
+2. Maximum 255 labels supported (see [GitHub README](https://github.com/loicsauteur/napari-annotator) for more info).
 
 # Getting Help
 

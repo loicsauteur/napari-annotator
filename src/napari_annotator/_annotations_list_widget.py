@@ -30,7 +30,8 @@ class AnnoList(QWidget):
         self.label_items_array = [] # array for the Label_item entries
 
         # create a LUT color dictionary
-        self.colormap = napari.utils.colormaps.label_colormap(num_colors=1024)
+        self.colormap = napari.utils.colormaps.label_colormap()#(num_colors=1024)
+        # limits the label layer to 255 labels, current limitation due to mismatch of viewer color with tool colors
         self.color_dict = self.create_color_dictionary(self.colormap.colors)
         # apply the color dictionary to the labels layer
         if self.labelLayer != None:
