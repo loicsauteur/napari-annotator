@@ -1,4 +1,4 @@
-# Description
+## Description
 
 This light-weight plugin provides additional control over label layers.
 It is intended to ease your work when annotating data manually.
@@ -12,7 +12,7 @@ For each label, you can:
 - change the label color with a color picker
 - erase the label (sets all the drawn pixels to the label layer background value, **not un-doable**)
 
-# Intended Audience & Supported Data
+## Intended Audience & Supported Data
 
 Everyone that has 2D or 3D data and wants to annotate (or curate annotated data)
 should find a useful extension with this plugin.
@@ -24,7 +24,7 @@ The "locate center" button will only work on 2D/3D label layers, i.e.: YX, ZYX, 
 
 Channels are considered a dimension.
 
-# Quickstart
+## Quickstart
 
 1. Start napari
 2. Open an image you want to annotate
@@ -39,7 +39,7 @@ Channels are considered a dimension.
 1. Lag when drawing (see [GitHub README](https://github.com/loicsauteur/napari-annotator) for more info).
 2. Maximum 255 labels supported (see [GitHub README](https://github.com/loicsauteur/napari-annotator) for more info).
 
-# Getting Help
+## Getting Help
 
 If you encounter bugs, please [file an issue] along with a detailed description.
 Or open a thread on [forum.image.sc](https://forum.image.sc) with a detailed description
@@ -47,6 +47,6 @@ and a [@loicsauteur](https://github.com/loicsauteur) tag.
 
 For general help, reach out via the [forum.image.sc](https://forum.image.sc) with a tag [@loicsauteur](https://github.com/loicsauteur).
 
-# How to Cite
+## How to Cite
 
 No citation needed. Honorable mention welcome.
