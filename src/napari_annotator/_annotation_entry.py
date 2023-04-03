@@ -6,6 +6,7 @@ from qtpy.QtCore import QSize
 from qtpy.QtGui import QColor, QIcon
 from qtpy.QtWidgets import QCheckBox, QColorDialog, QPushButton
 
+from pathlib import Path
 
 class LabelItem:
     """
@@ -61,8 +62,11 @@ class LabelItem:
         self.qErase.setIconSize(QSize(20, 20))
 
         # QWidget restore label
+        redoArrowPath = Path(__file__).parent
+        redoArrowPath = redoArrowPath / 'redo-arrow-icon.svg'
+        redoArrowPath = str(redoArrowPath.absolute())
         self.qRestore = QPushButton()
-        self.qRestore.setIcon(QIcon("./resources/redo-arrow-icon.svg"))
+        self.qRestore.setIcon(QIcon(redoArrowPath))
         self.qRestore.setIconSize(QSize(20, 20))
         self.qRestore.setToolTip("Functionality is lost after layer change.")
         self.qRestore.setDisabled(True)
@@ -96,7 +100,6 @@ class LabelItem:
         Restores the label that has been saved after erasing.
         Implemented up to 4D images
         """
-
         # 1D image
         if self.mem.shape[0] == 1:
             for x in self.mem:
