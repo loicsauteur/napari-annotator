@@ -10,7 +10,8 @@ For each label, you can:
 - toggle the visibility of individual labels
 - locate the drawn label (i.e. move to the centroid location at the current zoom level)
 - change the label color with a color picker
-- erase the label (sets all the drawn pixels to the label layer background value, **not un-doable**)
+- erase the label (sets all the drawn pixels to the label layer background value)
+- restore an erased label (switching layers will reset this capability)
 
 # Intended Audience & Supported Data
 

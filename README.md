@@ -28,6 +28,7 @@ This lightweight plugin helps you navigate your labels layer. It is intended to 
 - Move to the centroid of a label at the current zoom.
 - Change the color of individual labels.
 - Erase all drawn pixels of a given label.
+- Restore an erased label.
 
 
 
@@ -41,16 +42,14 @@ But you can always change the color of individual labels, using the color picker
 
 ## Known limitations
 1. Lag when drawing (probably related to [this issue](https://github.com/napari/napari/issues/2380#issue-825308887)).
-2. Erasing a label is not un-doable.
-3. Locating / moving to the center of a label only works on 2D/3D label layers, i.e.:
+2. Locating / moving to the center of a label only works on 2D/3D label layers, i.e.:
    1. single- / multi-channel 2D label layers.
    2. single-channel 3D label layers (the third dimension being either Z or T).
-4. Maximum 255 labels supported. Increasing number of supported label is possible, but when increasing it, colors in the canvas will mismatch the layer control and plugin entries (probably related to [this issue](https://github.com/napari/napari/issues/3174))
-<!--This mismatch will also prevent the hide button to work on those mismatched labels...-->
+3. Maximum 255 labels supported. Increasing number of supported label is possible, but when increasing it, colors in the canvas will mismatch the layer control and plugin entries (probably related to [this issue](https://github.com/napari/napari/issues/3174))
+4. Restoring an erased labels is lost after switching between layers.
+<!--#3: This mismatch will also prevent the hide button to work on those mismatched labels...-->
 
-### Note to self:
-I am using a private object/methods for accessing napari icons (i.e. `_icons.get_icon_path('picker')`).
-This is not amethod directly directly from the viewer or layer, but is it still OK?
+
 
 
 ## Installation
