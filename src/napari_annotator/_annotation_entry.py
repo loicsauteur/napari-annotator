@@ -33,7 +33,9 @@ class LabelItem:
         self.qLabel.setStyleSheet(
             "background-color: "
             + QColor(
-                self.color[0] * 255, self.color[1] * 255, self.color[2] * 255
+                int(self.color[0] * 255),
+                int(self.color[1] * 255),
+                int(self.color[2] * 255)
             ).name()
         )
         self.default_styleSheet = (

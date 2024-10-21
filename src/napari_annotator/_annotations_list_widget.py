@@ -162,7 +162,7 @@ class AnnoList(QWidget):
         self.label_items_array = []
         self.create_label_item_array()  # populates the label_items_array
         for i in range(
-            0, len(self.label_items_array)
+                0, len(self.label_items_array)
         ):  # basically the table rows (i+1 later to jump header)
             cur_qWidgets_list = self.label_items_array[i].get_qWidget_list()
             # basically go over the columns
