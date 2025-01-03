@@ -60,7 +60,6 @@ class AnnoList(QWidget):
 
         # apply the color dictionary to the labels layer
         if self.labelLayer is not None:
-            print("layer is not NONE")
             self.labelLayer.colormap = self.colormap
 
         # create header widget object to be added into the _dock_Widget Layout
@@ -69,7 +68,6 @@ class AnnoList(QWidget):
         # initialise the widget
         # check if label_items_array is empty and populate it
         if not self.label_items_array and self.labelLayer is not None:
-            print("Widget initialised - get here only with active label layer")
             self.initialise_widget(self.labelLayer)
 
     #             AnnoList class methods                #
@@ -170,7 +168,6 @@ class AnnoList(QWidget):
         Called upon layer change to Labels layer
         :param layer: napari labels layer
         """
-        print("Widget initialised called")
         self.labelLayer = layer
         self.label_items_array = []
         self.create_label_item_array()  # populates the label_items_array
