@@ -15,7 +15,7 @@ class Annotator(QWidget):
     def __init__(self, napari_viewer: napari.viewer.Viewer):
         super().__init__()
 
-        #                   class varialbes                 #
+        #                   class variables                 #
         self.viewer = napari_viewer
         active = self.viewer.layers.selection.active
         if isinstance(active, napari.layers.Labels):

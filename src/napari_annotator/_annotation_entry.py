@@ -1,17 +1,22 @@
+from pathlib import Path
+
 import napari
 import numpy as np
 import skimage.measure
 from napari.resources import _icons
+from napari.utils import DirectLabelColormap
 from qtpy.QtCore import QSize
 from qtpy.QtGui import QColor, QIcon
 from qtpy.QtWidgets import QCheckBox, QColorDialog, QPushButton
 
-from pathlib import Path
 
 class LabelItem:
     """
     This object contains QWidgets for a label.
     Each Button has its own methods.
+
+    Visibility and changing colors will recreate the layer.colormap,
+    using DirectLabelColormap (and the modified values in layer.colormap.color_dict).
     """
 
     def __init__(self, index, layer, color_dictionary):
@@ -29,13 +34,13 @@ class LabelItem:
 
         # QWidget label name/number
         self.qLabel = QPushButton("Label #" + str(self.label))
-        # set label color as backround
+        # set label color as background
         self.qLabel.setStyleSheet(
             "background-color: "
             + QColor(
                 int(self.color[0] * 255),
                 int(self.color[1] * 255),
-                int(self.color[2] * 255)
+                int(self.color[2] * 255),
             ).name()
         )
         self.default_styleSheet = (
@@ -65,7 +70,7 @@ class LabelItem:
 
         # QWidget restore label
         redoArrowPath = Path(__file__).parent
-        redoArrowPath = redoArrowPath / 'redo-arrow-icon.svg'
+        redoArrowPath = redoArrowPath / "redo-arrow-icon.svg"
         redoArrowPath = str(redoArrowPath.absolute())
         self.qRestore = QPushButton()
         self.qRestore.setIcon(QIcon(redoArrowPath))
@@ -132,7 +137,7 @@ class LabelItem:
 
         self.layer.refresh()
         self.qRestore.setDisabled(True)
-        # delete the memorised labe. drawing
+        # delete the memorised label drawing
         self.mem = None
         print(f"Label #{self.label} has been restored.")
 
@@ -159,10 +164,13 @@ class LabelItem:
         self.color = np.asarray(
             color.getRgbF()
         )  # set the color variable to the selected color
-        self.layer.color = self.color_dict  # update the layer color
 
-        # update also the layer's color map (not sure what this does)
-        self.layer.colormap.colors[self.label] = np.asarray(color.getRgbF())
+        # Recreate a color_dict and apply it to the layer colormap
+        temp_color = self.color_dict[self.label]
+        temp_color[0] = self.color[0]
+        temp_color[1] = self.color[1]
+        temp_color[2] = self.color[2]
+        self.layer.colormap = DirectLabelColormap(color_dict=self.color_dict)
 
     def _onClick_erase_label(self):
         """
@@ -171,7 +179,7 @@ class LabelItem:
         """
         # store the drawn pixels
         rememberMe = np.asarray(np.where(self.layer.data == self.label))
-        if not rememberMe.size == 0:
+        if rememberMe.size != 0:
             self.mem = rememberMe
             self.qRestore.setDisabled(False)
 
@@ -245,8 +253,8 @@ class LabelItem:
             self.visible = False
             # set the alpha in the current color dictionary
             self.color_dict[self.label][3] = 0.0
-        # apply the color dictionary
-        self.layer.color = self.color_dict
+        # Apply the color dictionary, by recreating the colormap
+        self.layer.colormap = DirectLabelColormap(color_dict=self.color_dict)
 
     def _onClick_select_Label(self):
         """

@@ -32,13 +32,12 @@ Channels are considered a dimension.
    1. Best, an image with the same dimension as you labels layer should have
    2. e.g. ``File > Open Sample > napari > Binary Blobs (3D)``
 3. Add (or load) a labels layer
-4. Start the plugin ``Plugins > napari-annotator: Annotator``
+4. Start the plugin ``Plugins > Annotator (Annotator)``
 5. Make sure the labels layer is selected
 6. Start drawing
 
 #### Known limitations
-1. Lag when drawing (see [GitHub README](https://github.com/loicsauteur/napari-annotator) for more info).
-2. Maximum 255 labels supported (see [GitHub README](https://github.com/loicsauteur/napari-annotator) for more info).
+1. Maximum 20'000 labels are supported.
 
 # Getting Help
 
